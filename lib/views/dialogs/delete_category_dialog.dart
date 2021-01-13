@@ -8,10 +8,10 @@ class DeleteCategoryDialog extends StatelessWidget {
   final String title;
   final String content;
   final Function() onSubmit;
-
+  final Function() onCancel;
 
   DeleteCategoryDialog({
-    this.title='', this.content ='',this.onSubmit
+    this.title='', this.content ='',this.onSubmit,this.onCancel
   });
 
   @override
@@ -72,7 +72,7 @@ class DeleteCategoryDialog extends StatelessWidget {
             ),
           ),
           FeedbackWidget(
-            onPressed: ()=>Navigator.of(context).pop(),
+            onPressed: ()=>onCancel,
             child: Container(
               alignment: Alignment.center,
               height: 40,
